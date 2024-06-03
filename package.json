@@ -15,5 +15,8 @@
     "rahulbiya"
   ],
   "author": "rahulbiya",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
 }
