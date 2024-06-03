@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 const heading =React.createElement('h1',{id:'heading',xyz:"abc"},'Hello World');
 //const heading is a react elemnet is normal object in java script.
 //heading and xyz are props of h1 element.
