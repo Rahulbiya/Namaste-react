@@ -92,3 +92,6 @@
     cursor: pointer;
     border-radius: 20%;
 }
+.filter {
+    display: flex;
+}
