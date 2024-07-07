@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from '../../images/logo.png';
+import { LOGO_URL } from '../utils/constant';
 const Header = () => {
     return (
         <div className='header'>
             <div className='logo-container'>
-                <img src={logo} alt='logo'className='logo'/>
+                <img src={LOGO_URL} alt='logo'className='logo'/>
                 <h1 className='logo-text'>Swigato</h1>
             </div>
         <div className='nav-items'>
