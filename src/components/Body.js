@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import RestaurantCard from './Restaurantcard';
 import resList from '../utils/mockData.js';
+import Shimmer from './Shimmer';
 const Body = () => {
    const [listofRestaurants, setListofRestaurants] = React.useState([]);
    useEffect(() => {
@@ -10,12 +11,12 @@ const Body = () => {
        const data= await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.19358469363305&lng=72.85892620682716&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
         const json = await data.json();
         
-        setListofRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+        setListofRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
-    if(listofRestaurants.length === 0) 
-        return <h1>Loading...</h1>;
-   return (
+    //conditional rendering
+   
+   return listofRestaurants.length === 0 ? <Shimmer/>:(
        
         
         <div className='body'>
@@ -29,7 +30,7 @@ const Body = () => {
             <div className='res-container'>
                {
                 listofRestaurants.map((restaurant) =>(
-                    <RestaurantCard key={restaurant.info.id} resData={restaurant.info}/>
+                    <RestaurantCard key={restaurant.id} resData={restaurant}/>
                 ))}
             </div>
         </div>

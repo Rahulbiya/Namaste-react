@@ -12,7 +12,7 @@ const RestaurantCard= (props) => {
       deliveryTime,
       
 
-      } = resData;
+      } = resData?.info;
   
     return (
         <div className='res-card'>
