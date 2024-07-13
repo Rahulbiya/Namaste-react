@@ -2,7 +2,6 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "Rahubiya react practice",
-  
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -24,6 +23,7 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1"
   }
 }
