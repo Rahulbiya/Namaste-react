@@ -14,3 +14,6 @@ Make a network and page coming from server is called server side routing
 
 -Dynamic Routing
 Dynamic Routing means rendering dynamic data from api and load it in application is called dynamic routing. 
+
+-why we use super props in  class based component in react
+By using super(props), we ensure that the constructor props are correctly passed to the parent constructor, allowing us to access this. props inside the constructor and other methods of the React class component.
