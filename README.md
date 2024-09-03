@@ -17,3 +17,5 @@ Dynamic Routing means rendering dynamic data from api and load it in application
 
 -why we use super props in  class based component in react
 By using super(props), we ensure that the constructor props are correctly passed to the parent constructor, allowing us to access this. props inside the constructor and other methods of the React class component.
+
+-componentDidMount is used to make an api call.
