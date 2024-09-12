@@ -34,22 +34,22 @@ const Body = () => {
        
         
         <div className='body'>
-            <div className='filter'>
-                <div className='search'>
-                    <input type='text'className='input-restaurant' value={SearchText} placeholder='Search for restaurants' onChange={(e)=>{setSearchText(e.target.value)}}/>
-                    <button onClick={()=>{
-                        console.log(SearchText);
+            <div className='flex'>
+                <div className=''>
+                    <input type='text'className='  w-max border border-solid border-black ' value={SearchText} placeholder='Search for restaurants' onChange={(e)=>{setSearchText(e.target.value)}}/>
+                    <button  className= 'rounded-xl bg-green-100  m-4 px-4 py-2' onClick={()=>{
+                        console.log(SearchText);0
                         const filteredList = listofRestaurants.filter((res)=>res.info.name.toLowerCase().includes(SearchText.toLowerCase()));
                         setFilteredRestaurant(filteredList);
                     }}>Search</button>
                 </div>
-                <button className='filter-btn' onClick={()=>{
-                    const filteredList = listofRestaurants.filter((res)=>res.info.avgRating>4.0);
+                <button className=' rounded-xl px-4 bg-green-100 m-4' onClick={()=>{
+                    const filteredList = listofRestaurants.filter((res)=>res.info.avgRating>4.6);
                     setListofRestaurants(filteredList);
                 }}>
                      Top Rated Restaurants</button>
             </div>
-            <div className='res-container'>
+            <div className='flex flex-wrap'>
                {
                 filteredRestaurant.map((restaurant) =>(
                   <Link 

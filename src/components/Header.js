@@ -17,32 +17,33 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
     
     return (
-        <div className='header'>
-            <div className='logo-container'>
-                <img src={LOGO_URL} alt='logo'className='logo'/>
-                <h1 className='logo-text'>Swigato</h1>
+        <div className='flex justify-between bg-pink-100 shadow-lg mb-2'>
+            <div className='flex'>
+                <img src={logo} alt='logo'className='w-56'/>
+               
+                
             </div>
-        <div className='nav-items'>
-            <ul>
-                <li>
+        <div className='flex items-center'>
+            <ul className='flex p-4 m-4  '>
+                <li className='px-4 '>
                     Online Status:{
                         onlineStatus ? "✅":"🔴"
                     }
                 </li>
-                <li>
+                <li className='px-4'>
                     <Link to="/">🏠Home</Link></li>
-                <li>
+                <li className='px-4'>
                     <Link to="/About">📃About Us
                     </Link></li>
-                <li>
+                <li className='px-4'>
                     <Link to='/contact'> ☎️Contact Us
                     </Link></li>
-                <li>
+                <li className='px-4'>
                         <Link to='/grocery'>Grocery</Link>
                 </li>
-                <li>🛒Cart</li>
+                <li className='px-4'>🛒Cart</li>
                 <button 
-                className='login-btn'
+                className='rounded-lg bg-pink-200 hover:bg-violet-300 active:bg-violet-300 focus:outline-none focus:ring focus:ring-violet-300'
                 onClick={()=>{btnName === 'Login' ? setBtnName('Logout') : setBtnName("Login") ;}}>
                 {btnName}</button>
             </ul>
