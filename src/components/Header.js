@@ -1,9 +1,10 @@
 import React from 'react';
 import logo from '../../images/logo.png';
 import { LOGO_URL } from '../utils/constant';
-import { useState ,useEffect} from 'react';
+import { useState ,useEffect,useContext} from 'react';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
+import UserContext from '../utils/UserContext';
 
 const Header = () => {
    // let btnName = 'Login';
@@ -15,6 +16,8 @@ const Header = () => {
         {console.log('useeffect render')});
 
     const onlineStatus = useOnlineStatus();
+    const {loggedInUser} =useContext(UserContext)
+    console.log(loggedInUser)
     
     return (
         <div className='flex justify-between bg-pink-200 shadow-lg mb-2 sm:bg-blue-200 lg:bg-green-200 '>
@@ -46,6 +49,7 @@ const Header = () => {
                 className='rounded-lg bg-pink-200 hover:bg-violet-300 active:bg-violet-300 focus:outline-none focus:ring focus:ring-violet-300'
                 onClick={()=>{btnName === 'Login' ? setBtnName('Logout') : setBtnName("Login") ;}}>
                 {btnName}</button>
+                <li className='px-4'>{loggedInUser}</li>
             </ul>
         </div>
         </div>

@@ -12,22 +12,40 @@ import Contact from './components/Contact';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 import { createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom';
-
+import{useState,useEffect} from 'react';
+import UserContext from './utils/UserContext';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
 //Chunking
 //Code sPLITTING
 //Dynamic Bundling
 //Lazy Loading
 //On Demand Loading
+//dynamic import
 
 const Grocery =lazy(()=>import("./components/Grocery"))
 const AppLayout = () => {
+
+    const [userName,setUserName] = useState();
+     useEffect(()=>{
+        
+        const data={
+                name: "Rahul Biya",
+            };
+        setUserName(data.name)
+    
+    },[])
+    
     return(
+        <Provider store={appStore}>
+        <UserContext.Provider value={{loggedInUser : userName,setUserName}}>
         <div className='app'>
             <Header/>
             {/** IF path =/ */}
             <Outlet/>
         </div>
-
+        </UserContext.Provider>
+        </Provider>
     )
 }
 const appRouter= createBrowserRouter([
