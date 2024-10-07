@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Body from './components/Body';
 import About from './components/About';
 import Contact from './components/Contact';
+import Cart from './components/Cart';
 //import Grocery from './components/Grocery'
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
@@ -69,6 +70,10 @@ const appRouter= createBrowserRouter([
             {
                 path:'/grocery',
                 element:<Suspense fallback={<h1>loading..</h1>}><Grocery/></Suspense>
+            },{
+                path:"/cart",
+                element:<Cart/>
+                
             },
             {
                 path:'/restaurants/:resId',
